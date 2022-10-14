@@ -1,3 +1,9 @@
+# INTRO
+
+>This is a quick installation guide including references for my WSL terminal.  
+>I have included the zshrcconfig which contains my personal setting and alias that I'm using with my WSL.  
+>Rename the file to **```zshrcconfig -> .zshrc```**.
+
 # SETUP
 
 ## ZSH
@@ -16,7 +22,7 @@ sudo apt-get install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-reference <https://github.com/ohmyzsh/ohmyzsh/wiki>
+ reference: <https://github.com/ohmyzsh/ohmyzsh/wiki>
 
 ---
 
@@ -33,7 +39,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
-reference <https://github.com/romkatv/powerlevel10k>
+reference: <https://github.com/romkatv/powerlevel10k>
 
 ---
 
@@ -95,6 +101,10 @@ sudo apt-get install cmake -y
 ```bash
 #installing and adding to $PATH
 cargo install exa
+
+# OR 
+
+scp ./target/release/exa /usr/bin/
 ```
 
 Setting "persistent" alias in shell
@@ -148,7 +158,7 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 man 2 select
 ```
 
-Setting "persistent" alias in shell
+< Setting "persistent" alias in shell
 
 ```bash
 #add alias to ~/.zshrc
