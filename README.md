@@ -1,5 +1,8 @@
 # INTRO
 
+![terminalexample](/example1.PNG)
+
+
 >This is a quick installation guide including references for my WSL terminal.  
 >I have included the zshrcconfig which contains my personal setting and alias that I'm using with my WSL.  
 >Rename the file to **```zshrcconfig -> .zshrc```**.
