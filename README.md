@@ -156,9 +156,10 @@ sudo apt install bat
 Coloring manpages
 
 ```bash
-#colorizing man pages
+#add export to ~/.zshrc
+#colorizing man pages with
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-man 2 select
+
 ```
 
 < Setting "persistent" alias in shell
