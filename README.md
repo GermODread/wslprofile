@@ -3,9 +3,10 @@
 ![terminalexample](/example1.PNG)
 
 
->This is a quick installation guide including references for my WSL terminal.  
->I have included the zshrcconfig which contains my personal setting and alias that I'm using with my WSL.  
->Rename the file to **```zshrcconfig -> .zshrc```**.
+>This is a quick installation guide including references for my WSL terminal. Installation my vary depending on shell and OS.
+
+I have included the zshrcconfig which contains my personal setting and alias that I'm using with my WSL.  
+Rename the file to **```zshrcconfig -> .zshrc```**.  
 
 # SETUP
 
@@ -157,7 +158,7 @@ Coloring manpages
 
 ```bash
 #add export to ~/.zshrc
-#colorizing man pages with
+#colorizing man pages with batcat
 export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 ```
