@@ -1,4 +1,4 @@
-# INTRO
+# **INTRO**
 
 ![terminalexample](/example1.PNG)
 
@@ -8,19 +8,19 @@
 I have included the zshrcconfig which contains my personal setting and alias that I'm using with my WSL.  
 Rename the file to **```zshrcconfig -> .zshrc```**.  
 
-# SETUP
+# **SETUP**
 
-## ZSH
+## **ZSH**
 
-### install
+### ***install***
 
 ```bash
 sudo apt-get install zsh -y
 ```
 
-## Oh-my-ZSH
+## **Oh-my-ZSH**
 
-### install
+### ***install***
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -30,9 +30,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ---
 
-## PowerleveL10k
+## **PowerleveL10k**
 
-### Install
+### ***Install***
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -47,7 +47,7 @@ reference: <https://github.com/romkatv/powerlevel10k>
 
 ---
 
-### zsh-syntax-highlighting
+### ***zsh-syntax-highlighting***
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -63,7 +63,7 @@ zsh-syntax-highligting
 
 ---
 
-### zsh-autosuggestions
+### ***zsh-autosuggestions***
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -79,9 +79,13 @@ zsh-autosuggestions
 
 ---
 
-## exa - modern ls replacement
+## **exa - Modern ls replacement**
 
-### Installing environment dependencies
+> This method of installation is only required IF using Windows or WSL.  
+> For Mac or Linux use cmd below  
+```sudo apt-get install exa```
+
+### ***Installing environment dependencies***
 
 ```bash
 #requires: rust
@@ -100,15 +104,19 @@ sudo apt-get install libgit2-dev -y
 sudo apt-get install cmake -y
 ```
 
-### Installing exa
+### ***Installing exa***
 
 ```bash
-#installing and adding to $PATH
+# using Rust to install and add exa to $PATH
 cargo install exa
 
-# OR 
+# OR Building from source and adding tp $PATH.
 
-scp ./target/release/exa /usr/bin/
+git clone https://github.com/ogham/exa.git ##pull source from github
+
+cargo build --release ## build  exa from the source code with Rust.
+
+scp ./target/release/exa /usr/bin/ # copy the executable to $PATH
 ```
 
 Setting "persistent" alias in shell
@@ -126,9 +134,9 @@ references:
 
 ---
 
-## Fuzzy File Finding
+## **Fuzzy File Finding**
 
-### Installing fuzzy file finding
+### ***Installing fuzzy file finding***
 
 ```bash
 #Cloning repository and installing
@@ -148,7 +156,9 @@ reference:
 
 ---
 
-## bat - modern cat replacement
+## **bat - Modern cat replacement**
+
+### ***Installing bat***
 
 ```bash
 sudo apt install bat
