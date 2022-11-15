@@ -1,6 +1,6 @@
 # **INTRO**
 
-## hello did you read this?
+
 
 ![terminalexample](/example1.PNG)
 
