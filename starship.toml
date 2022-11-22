@@ -38,7 +38,7 @@ format = "[  $user ]($style)"
 
 [hostname]
 ssh_only = false
-format = "[$ssh_symbol](bold blue $style)[ on ]($style)($style)[$hostname ](bold yellow $style)"
+format = "[$ssh_symbol](bold blue $style)[ on ]($style)[$hostname ](bold yellow $style)"
 disabled = false
 style = "bg:#9A348E"
 
@@ -49,7 +49,7 @@ read_only_style = "red"
 truncation_length = 3
 truncate_to_repo = false
 truncation_symbol = '.../'
-home_symbol = '  '
+home_symbol = ' '
 format = '[ $path ]($style)'
 
 [jobs]
@@ -65,8 +65,8 @@ format = '[[ $symbol $branch ](purple bg:#FCA17D)]($style)'
 
 [git_status]
 style = "red"
-format = '[[($all_status$ahead_behind)()](bg:#FCA17D)]($style)'
-up_to_date = '✓(bold green) '
+format = '[[($all_status$ahead_behind) ](bg:#FCA17D)]($style)'
+up_to_date = ' ✓(bold green) '
 modified = "📝"
 staged = '[++\($count\)](fg:green bg:#71797E)'
 ahead = "⇡${count}"
