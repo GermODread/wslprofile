@@ -1,56 +1,49 @@
 format = """
-[](fg:#7C0A02)\
 $username\
-[ ](fg:#7C0A02 bg:#9A348E)\
 $hostname\
-[ ](fg:#9A348E bg:#DA627D)\
 $directory\
-[ ](fg:#DA627D bg:#FCA17D)\
 $git_branch\
 $git_state\
 $git_status\
 $git_metrics\
-[](fg:#FCA17D)\
 $fill\
 $battery\
 $cmd_duration $jobs $line\
-[](fg:#33658A)\
 $localip\
 $time\
-[](fg:#33658A)\
 $line_break\
-[└─](#9A348E)$character"""
+[└─](#7C0A02)$character"""
 
 
 [fill]
 symbol = " "
 
 [character]
-success_symbol = "[❯](purple)"
+success_symbol = "[❯](green)"
 error_symbol = "[](red)"
-vicmd_symbol = "[❮](green)"
+vicmd_symbol = "[❮](purple)"
 
 [username]
 show_always = true
 style_user = "bg:#7C0A02"
 style_root = "bg:#7C0A02"
-format = "[  $user ]($style)"
+format = "[](fg:#7C0A02)[  $user ]($style)[ ](fg:#7C0A02 bg:#4c00b0)"
 
 [hostname]
 ssh_only = false
-format = "[$ssh_symbol](bold blue $style)[ on ]($style)[$hostname ](bold yellow $style)"
+format = "[$ssh_symbol](bold blue bg:$style)[ on ](bg:$style)[$hostname ](bold yellow bg:$style)[](fg:$style bg:#FCAE1E)"
 disabled = false
-style = "bg:#9A348E"
+style = "#4c00b0"
 
 [directory]
-style = "blue bg:#DA627D"
+style = "#051094 bg:#FCAE1E"
 read_only = "🔒"
 read_only_style = "red"
 truncation_length = 3
 truncate_to_repo = false
 truncation_symbol = '.../'
-home_symbol = ' '
-format = '[ $path ]($style)'
+home_symbol = '  '
+format = '[ $path ]($style)[](fg:#FCAE1E)'
 
 [jobs]
 symbol = ""
@@ -60,15 +53,15 @@ format = "[$symbol]($style)"
 
 [git_branch]
 symbol = " "
-style = "purple"
-format = '[[ $symbol $branch ](purple bg:#FCA17D)]($style)'
+style = "#7600bc"
+format = '[ ](fg:black bg:#FCA17D)[ $symbol $branch ]($style bg:#FCA17D)'
 
 [git_status]
 style = "red"
-format = '[[($all_status$ahead_behind) ](bg:#FCA17D)]($style)'
+format = '[($all_status$ahead_behind) ](bg:#FCA17D)'
 up_to_date = ' ✓(bold green) '
 modified = "📝"
-staged = '[++\($count\)](fg:green bg:#71797E)'
+staged = '[ ++\($count\)](fg:green bg:#71797E)'
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
@@ -83,7 +76,7 @@ merge = ''
 disabled = false
 added_style = "bold green"
 deleted_style = "bold red"
-format = "[(+$added)]($added_style bg:#71797E)[(-$deleted)]($deleted_style bg:#36454F)"
+format = "[(+$added)]($added_style bg:#71797E)[(-$deleted)]($deleted_style bg:#36454F)[](fg:#FCA17D)"
 
 [cmd_duration]
 format = "took [$duration]($style)"
@@ -117,10 +110,10 @@ discharging_symbol = " "
 
 [localip]
 ssh_only = false
-format = '[ local ip: $localipv4 ](bold purple bg:#33658A)'
+format = '[ $localipv4 ](bold purple)'
 disabled = false
 
 [time]
 disabled = false
 style = "bold white"
-format = '[[ $time ](bg:#33658A)]($style)'
+format = '[](fg:#33658A)[ $time ]($style bg:#33658A)[](fg:#33658A)'
