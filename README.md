@@ -1,38 +1,59 @@
 # **INTRO**
 
-![terminalexample](/example1.PNG)
+>This is a quick installation guide including references for my WSL terminal. Installation my vary depending on shell and OS.  
+>I have shifted themes from ```PowerLevel10k -> **Starship.rs```  
+>and I have included the starship.toml file which holds my current prompt config.  
+>```cp starship.toml to ~/.config```  
+>I have included the zshrcconfig which contains my personal settings and aliases that I'm using with my WSL.  
+>Rename the file to **```zshrcconfig -> .zshrc```** and move it to ```/~```.  
 
+## **ZSH Prompt**
 
->This is a quick installation guide including references for my WSL terminal. Installation my vary depending on shell and OS.
+### **ZSH**
 
-I have included the zshrcconfig which contains my personal setting and alias that I'm using with my WSL.  
-Rename the file to **```zshrcconfig -> .zshrc```**.  
-
-# **SETUP**
-
-## **ZSH**
-
-### ***install***
+#### ***install***
 
 ```bash
 sudo apt-get install zsh -y
 ```
 
-## **Oh-my-ZSH**
+### **Oh-my-ZSH**
 
-### ***install***
+#### ***install***
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
- reference: <https://github.com/ohmyzsh/ohmyzsh/wiki>
+reference: <https://github.com/ohmyzsh/ohmyzsh/wiki>
+
+---
+  
+# **Theme**  
+
+### **Starship.rs**
+
+#### ***Install***
+
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+
+Add the following to the end of ``~./zshrc``
+
+```zsh
+eval "$(starship init zsh)"
+```
+
+![terminalexampleSh](/terminalexampleStarship.PNG)
+
+reference: <https://Starship.rs>
 
 ---
 
-## **PowerleveL10k**
+### **PowerleveL10k**
 
-### ***Install***
+#### ***Install***
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -43,11 +64,18 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
+![terminalexamplep10k](/example1.PNG)
+
 reference: <https://github.com/romkatv/powerlevel10k>
+
 
 ---
 
-### ***zsh-syntax-highlighting***
+# Modules
+
+---
+
+## ***zsh-syntax-highlighting***
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -63,7 +91,7 @@ zsh-syntax-highligting
 
 ---
 
-### ***zsh-autosuggestions***
+## ***zsh-autosuggestions***
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -85,9 +113,9 @@ zsh-autosuggestions
 > For Mac or Linux use cmd below  
 ```sudo apt-get install exa```
 
-### ***Installing environment dependencies***
+#### ***Installing environment dependencies***
 
-```bash
+```zsh
 #requires: rust
 #dependencies: libgit2 and cmake
 
@@ -104,9 +132,9 @@ sudo apt-get install libgit2-dev -y
 sudo apt-get install cmake -y
 ```
 
-### ***Installing exa***
+#### ***Installing exa***
 
-```bash
+```zsh
 # using Rust to install and add exa to $PATH
 cargo install exa
 
@@ -121,7 +149,7 @@ scp ./target/release/exa /usr/bin/ # copy the executable to $PATH
 
 Setting "persistent" alias in shell
 
-```bash
+```zsh
 #add alias to ~/.zshrc
 alias ls="exa --icons"
 ```
@@ -136,15 +164,15 @@ references:
 
 ## **Fuzzy File Finding**
 
-### ***Installing fuzzy file finding***
+#### ***Installing fuzzy file finding***
 
-```bash
+```zsh
 #Cloning repository and installing
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-```bash
+```zsh
 #update plugins in ~/.zshrc
 plugings=(
 ...
@@ -158,7 +186,7 @@ reference:
 
 ## **bat - Modern cat replacement**
 
-### ***Installing bat***
+#### ***Installing bat***
 
 ```bash
 sudo apt install bat
