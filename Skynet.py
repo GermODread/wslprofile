@@ -19,7 +19,6 @@ def skynet(q,z):
     top_p=1,
     frequency_penalty=0.0,
     presence_penalty=0.6,
-    echo=True,
     stop=[" Human:", " AI:"]
   )
   print(response.choices[0].text)
@@ -33,8 +32,7 @@ def sarcasticmark(q,z):
     max_tokens=60,
     top_p=0.3,
     frequency_penalty=0.5,
-    presence_penalty=0.0,
-    echo=True
+    presence_penalty=0.0
   )
   print(response.choices[0].text)
 
