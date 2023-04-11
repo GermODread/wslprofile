@@ -201,7 +201,7 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 
 ```
 
-< Setting "persistent" alias in shell
+Setting "persistent" alias in shell
 
 ```bash
 #add alias to ~/.zshrc
