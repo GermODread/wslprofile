@@ -1,9 +1,9 @@
 # **INTRO**
 
 >This is a quick installation guide including references for my WSL terminal. Installation my vary depending on shell and OS.  
->I have shifted themes from ```PowerLevel10k -> **Starship.rs```  
+>I have shifted themes from **```PowerLevel10k -> Starship.rs```**  
 >and I have included the starship.toml file which holds my current prompt config.  
->```cp starship.toml to ~/.config```  
+>**```cp starship.toml to ~/.config```**  
 >I have included the zshrcconfig which contains my personal settings and aliases that I'm using with my WSL.  
 >Rename the file to **```zshrcconfig -> .zshrc```** and move it to ```/~```.  
 
