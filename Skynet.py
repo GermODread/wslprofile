@@ -4,39 +4,46 @@ import openai
 import sys
 
 api = "API_KEY_HERE"
+cmd = sys.argv[1]
+args = sys.argv[2:]
+question = " ".join(args)
 
-args = sys.argv[1:]
 
-question = ' '.join(args)
+def skynet(q, z):
+    openai.api_key = f"{z}"
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=f"{q}",
+        temperature=0.0,
+        max_tokens=500,
+        top_p=1,
+        frequency_penalty=0.0,
+        presence_penalty=0.0,
+    )
+    print(response.choices[0].text)
 
-def skynet(q,z):
-  openai.api_key = f"{z}"
-  response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt=f"{question}",
-    temperature=0.9,
-    max_tokens=500,
-    top_p=1,
-    frequency_penalty=0.0,
-    presence_penalty=0.6,
-    stop=[" Human:", " AI:"]
-  )
-  print(response.choices[0].text)
 
-def sarcasticmark(q,z):
-  openai.api_key = f"{z}"
-  response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt=f"{question}",
-    temperature=0.5,
-    max_tokens=60,
-    top_p=0.3,
-    frequency_penalty=0.5,
-    presence_penalty=0.0
-  )
-  print(response.choices[0].text)
+def imgcreate(q, z):
+    openai.api_key = f"{z}"
+    response = openai.Image.create(prompt=f"{q}", n=1, size="1024x1024")
+
+    print(response.data)
+
+
+def editgpt(q, z):
+    openai.api_key = f"{z}"
+    response = openai.Edit.create(
+        model="text-davinci-edit-001",
+        input=f"{q}",
+        instruction="Fix the spelling mistakes",
+    )
+    print(response.choices[0].text)
 
 
 if __name__ == "__main__":
-    #sarcasticmarv(question, api)
-    skynet(question, api)
+    if cmd == "img":
+        imgcreate(question, api)
+    if cmd == "edit":
+        editgpt(question, api)
+    if cmd == "q":
+        skynet(question, api)
